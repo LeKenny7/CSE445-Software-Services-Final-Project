@@ -15,15 +15,25 @@ namespace Proj5
     {
         void Application_Start(object sender, EventArgs e)
         {
-            // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            //String fullM = Auth("App_Data/Member.xml");
-            //String fullS = Auth("App_Data/Staff.xml");
-
-            //write(fullM, "Member/Web.Config");
-            //write(fullS, "Staff/Web.Config");
+        }
+        void Application_End()
+        {
+            Response.Write("< hr /> This page was last accessed at " + DateTime.Now.ToString());
         }
 
+        void Application_Error(object sender, EventArgs e)
+        {
+            if (HttpContext.Current == null) return;
+            HttpContext context = HttpContext.Current;
+
+            Exception exception = context.Server.GetLastError();
+
+            if (exception.InnerException.Message.Equals("Duplicate Account"))
+            {
+                Response.Redirect("~/Error.aspx");
+            }
+        }
     }
 }

@@ -45,7 +45,7 @@ namespace Proj5.Staff
             foreach (XmlNode child in all)
             {
                 String un = child.SelectSingleNode("Name").InnerText;
-                Response.Write(un);
+                //Response.Write(un);
                 if(un.Equals(username))
                 {
                     return true;

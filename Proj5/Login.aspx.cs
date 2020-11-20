@@ -59,14 +59,14 @@ namespace Proj5
 
                         if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "Name"))
                         {
-                            Response.Write(reader.Value);
+                            //Response.Write(reader.Value);
                             string sname = reader.ReadString();
                             if (sname == un)
                             {
                                 validUser = true;
-                                Response.Write("u: " + reader.Value);
+                                //Response.Write("u: " + reader.Value);
                                 reader.Read();
-                                Response.Write("read: " + reader.Value);
+                                //Response.Write("read: " + reader.Value);
                             }
                         }
 
@@ -75,7 +75,7 @@ namespace Proj5
                             string spass = reader.ReadString();
                             if (spass == ps)
                             {
-                                Response.Write("p: " + reader.Value);
+                                //Response.Write("p: " + reader.Value);
                                 validPassword = true;
                             }
                         }

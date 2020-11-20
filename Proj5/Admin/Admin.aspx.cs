@@ -14,10 +14,7 @@ namespace Proj5.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-                /*if (!User.Identity.Name.Equals("TA"))
-                {
-                    Response.Redirect("../Default.aspx");
-                }*/
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -39,28 +36,9 @@ namespace Proj5.Admin
             }
             else
             {
-                //throw new Exception("Duplicate Account");
+                throw new Exception("Duplicate Account");
             }
         }
-
-        public bool A(String username)
-        {
-            XmlDocument xd = new XmlDocument();
-            xd.Load(Server.MapPath("../App_Data/Staff.xml"));
-            XmlNodeList all = xd.DocumentElement.SelectNodes("/allUsers/user");
-            Response.Write("size: " + all.Count);
-            foreach (XmlNode child in all)
-            {
-                String un = child.SelectSingleNode("Name").InnerText;
-                Response.Write(un);
-                if (un.Equals(username))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
 
         public Boolean Auth(String un, String ps)
         {
@@ -75,14 +53,14 @@ namespace Proj5.Admin
                     {
                         if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "Name"))
                         {
-                            Response.Write(reader.Value);
+                            //Response.Write(reader.Value);
                             string sname = reader.ReadString();
                             if (sname == un)
                             {
                                 validUser = true;
-                                Response.Write("u: " + reader.Value);
+                                //Response.Write("u: " + reader.Value);
                                 reader.Read();
-                                Response.Write("read: " + reader.Value);
+                                //Response.Write("read: " + reader.Value);
                             }
                         }
 
@@ -91,7 +69,7 @@ namespace Proj5.Admin
                             string spass = reader.ReadString();
                             if (spass == ps)
                             {
-                                Response.Write("p: " + reader.Value);
+                                //Response.Write("p: " + reader.Value);
                                 validPassword = true;
                             }
                         }
