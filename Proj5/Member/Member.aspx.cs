@@ -10,23 +10,9 @@ namespace Proj5.Member
 {
     public partial class Member : System.Web.UI.Page
     {
-        Multi.Service1Client client = new Multi.Service1Client();
-        WeatherServiceReference.Service1Client weatherService = new WeatherServiceReference.Service1Client();
         protected void Page_Load(object sender, EventArgs e)
         {
-            string weatherInfo = "<br/>Weather Info:";
-            HttpCookie myCookies = Request.Cookies["myCookieID"]; //checks for any cookies
-            if ((myCookies == null) || (myCookies["Zipcode"] == ""))
-            {
-                zipcodeLabel.Text = "No history of zipcode";
-            }
-            else
-            {
-                zipcodeLabel.Text = "Last entered valid zipcode: " + myCookies["Zipcode"]; //uses last entered zipcode
-                tz.Text = client.GetTimezone(myCookies["Zipcode"]);
-                weatherInfo += weatherService.GetWeatherData(myCookies["Zipcode"]);
-                weatherInfoLabel.Text = weatherInfo;
-            }
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -42,27 +28,9 @@ namespace Proj5.Member
 
         protected void Enter_Click(object sender, EventArgs e)
         {
-            //Multi.Service1Client client = new Multi.Service1Client(); // Makes sure both text boxes are full
-            string zip = zipcodeTextBox.Text;
-            string weatherInfo = "<br/>Weather Info:";
-            //WeatherServiceReference.Service1Client weatherService = new WeatherServiceReference.Service1Client(); //uses weather service
-            try //checks for valid zipcode
-            {
-                tz.Text = client.GetTimezone(zip);
-                weatherInfo += weatherService.GetWeatherData(zip);
-            }
-            catch (System.ServiceModel.FaultException) //redo if incorrect zipcode
-            {
-                weatherInfoLabel.Text = "Incorrect zipcode, try again";
-                return;
-            }
-            weatherInfoLabel.Text = weatherInfo;
-
-            HttpCookie myCookies = new HttpCookie("myCookieID");
-            myCookies["Zipcode"] = zipcodeTextBox.Text; //add zipcode to cookie
-            myCookies.Expires = DateTime.Now.AddMonths(6); //remove cookie after 6 months
-            Response.Cookies.Add(myCookies); //Add to cookie
-            zipcodeLabel.Text = "Zipcode stored in cookie: " + myCookies["Zipcode"]; //Let user know zipcode is stored in cookie
+            Multi.Service1Client client = new Multi.Service1Client(); // Makes sure both text boxes are full
+            string zip = zipcode.Text;
+            tz.Text = client.GetTimezone(zip);
         }
     }
 }

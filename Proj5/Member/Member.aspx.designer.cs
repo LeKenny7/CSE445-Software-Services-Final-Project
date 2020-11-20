@@ -42,22 +42,13 @@ namespace Proj5.Member
         protected global::System.Web.UI.WebControls.Button Button2;
 
         /// <summary>
-        /// zipcodeLabel control.
+        /// zipcode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label zipcodeLabel;
-
-        /// <summary>
-        /// zipcodeTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox zipcodeTextBox;
+        protected global::System.Web.UI.WebControls.TextBox zipcode;
 
         /// <summary>
         /// Enter control.
@@ -76,14 +67,5 @@ namespace Proj5.Member
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label tz;
-
-        /// <summary>
-        /// weatherInfoLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label weatherInfoLabel;
     }
 }
