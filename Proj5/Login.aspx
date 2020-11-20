@@ -9,15 +9,18 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            Login:<br />
+            <h1>Login:</h1>
+            Login as either a Member, Admin, or Staff!!<br />
             <br />
-            username:<br />
+            Username:<br />
             <asp:TextBox ID="username" runat="server"></asp:TextBox>
             <br />
             Password:<br />
             <asp:TextBox ID="password" runat="server"></asp:TextBox>
             <br />
+            <br />
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Submit" />
+        &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">No Account? Register!</asp:LinkButton>
         </div>
     </form>
 </body>

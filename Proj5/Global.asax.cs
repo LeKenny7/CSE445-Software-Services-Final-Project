@@ -48,11 +48,10 @@ namespace Proj5
             context.Server.ClearError();*/
             
 
-            /*if (exception.Message.Equals("Duplicate Account"))
+            if (exception.Message.Equals("Duplicate Account"))
             {
                 Response.Redirect("../Error.aspx");
             }
-            Response.Redirect("../Default.aspx");*/
         }
 
     }

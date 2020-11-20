@@ -82,5 +82,10 @@ namespace Proj5
             catch (Exception ec) { }
             return false;
         }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
+        }
     }
 }
