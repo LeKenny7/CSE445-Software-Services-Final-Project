@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Staff.aspx.cs" Inherits="Proj5.Staff.Staff" %>
-<%@ Register TagPrefix = "cse" TagName="loginName" src="CurrentUsername.ascx" %>
+<%@ Register TagPrefix = "cse" TagName="loginName" src="../CurrentUsername.ascx" %>
     
     
 <!DOCTYPE html>
