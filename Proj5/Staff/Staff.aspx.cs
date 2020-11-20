@@ -41,7 +41,7 @@ namespace Proj5.Staff
             XmlDocument xd = new XmlDocument();
             xd.Load(Server.MapPath("../App_Data/Staff.xml"));
             XmlNodeList all = xd.DocumentElement.SelectNodes("/allUsers/user");
-            Response.Write("size: " + all.Count);
+            //Response.Write("size: " + all.Count);
             foreach (XmlNode child in all)
             {
                 String un = child.SelectSingleNode("Name").InnerText;
@@ -63,6 +63,24 @@ namespace Proj5.Staff
         {
             FormsAuthentication.SignOut();
             Response.Redirect("../Default.aspx");
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            String full = "";
+            int count = 1;
+            XmlDocument xd = new XmlDocument();
+            xd.Load(Server.MapPath("../App_Data/Member.xml"));
+            XmlNodeList all = xd.DocumentElement.SelectNodes("/allUsers/user");
+            //Response.Write("size: " + all.Count);
+            foreach (XmlNode child in all)
+            {
+                String un = child.SelectSingleNode("Name").InnerText;
+                String pw = child.SelectSingleNode("Password").InnerText;
+                full += "Member " + count + ": Username [" + un + "] Password: [" + pw + "]<br/>";
+                count++;
+            }
+            xml.Text = full;
         }
     }
 }

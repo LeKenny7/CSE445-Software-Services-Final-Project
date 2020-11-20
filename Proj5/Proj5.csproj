@@ -164,7 +164,6 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="Staff\Staff.aspx" />
-    <Content Include="Timezone.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -254,13 +253,6 @@
     </Compile>
     <Compile Include="Staff\Staff.aspx.designer.cs">
       <DependentUpon>Staff.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Timezone.aspx.cs">
-      <DependentUpon>Timezone.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Timezone.aspx.designer.cs">
-      <DependentUpon>Timezone.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
