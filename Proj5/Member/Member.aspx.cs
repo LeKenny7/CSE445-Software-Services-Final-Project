@@ -25,5 +25,12 @@ namespace Proj5.Member
             FormsAuthentication.SignOut();
             Response.Redirect("../Default.aspx");
         }
+
+        protected void Enter_Click(object sender, EventArgs e)
+        {
+            Multi.Service1Client client = new Multi.Service1Client(); // Makes sure both text boxes are full
+            string zip = zipcode.Text;
+            tz.Text = client.GetTimezone(zip);
+        }
     }
 }

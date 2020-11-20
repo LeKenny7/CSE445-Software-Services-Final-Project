@@ -9,8 +9,9 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            ADMIN<br />
-            Add username and passwords to staff.xml<br />
+            <h1>Administration Creating Staff Accounts</h1>
+            *Only for Admin to add users (Username and Password) to Staff.XML<br />
+            *Current/Only admin is <strong>Username:</strong> <em>TA</em> and <strong>Password:</strong> <em>Cse445ta!</em><br />
             <br />
             Username:<br />
             <asp:TextBox ID="username" runat="server"></asp:TextBox>

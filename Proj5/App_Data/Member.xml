@@ -3,24 +3,4 @@
   <user>
      	<Name>TA</Name>
       	<Password>Cse445ta!</Password></user>
-  <user>
-    <Name>Johnny</Name>
-    <Password>Cse445ta!</Password>
-  </user>
-  <user>
-    <Name>julia</Name>
-    <Password>Cse445ta!</Password>
-  </user>
-  <user>
-    <Name>Dart</Name>
-    <Password>Cse445ta!</Password>
-  </user>
-  <user>
-    <Name>Keny</Name>
-    <Password>Cse445ta!</Password>
-  </user>
-  <user>
-    <Name>Lisa</Name>
-    <Password>Cse445ta!</Password>
-  </user>
 </allUsers>

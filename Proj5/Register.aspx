@@ -18,6 +18,7 @@
             <br />
             Password:<br />
             <asp:TextBox ID="password" runat="server"></asp:TextBox>
+            <br />
         </div>
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Register" />
     &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Have an Account? Login!</asp:LinkButton>
