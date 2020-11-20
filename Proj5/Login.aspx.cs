@@ -97,7 +97,7 @@ namespace Proj5
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Register.aspx");
+            Response.Redirect("CaptchaForm.aspx");
         }
     }
 }
