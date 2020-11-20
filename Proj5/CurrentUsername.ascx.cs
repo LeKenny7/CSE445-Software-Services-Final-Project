@@ -30,6 +30,7 @@ namespace Proj5
             FormsAuthentication.SignOut();
             currentUserLabel.Text = "Not Logged In";
             LogoutButton.Visible = false;
+            Response.Redirect("~/Default.aspx");
         }
     }
 }
