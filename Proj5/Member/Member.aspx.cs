@@ -10,8 +10,6 @@ namespace Proj5.Member
 {
     public partial class Member : System.Web.UI.Page
     {
-        Multi.Service1Client client = new Multi.Service1Client();
-        WeatherServiceReference.Service1Client weatherService = new WeatherServiceReference.Service1Client();
         protected void Page_Load(object sender, EventArgs e)
         {
             string weatherInfo = "<br/>Weather Info:";
@@ -23,9 +21,6 @@ namespace Proj5.Member
             else
             {
                 zipcodeLabel.Text = "Last entered valid zipcode: " + myCookies["Zipcode"]; //uses last entered zipcode
-                tz.Text = client.GetTimezone(myCookies["Zipcode"]);
-                weatherInfo += weatherService.GetWeatherData(myCookies["Zipcode"]);
-                weatherInfoLabel.Text = weatherInfo;
             }
         }
 
@@ -42,10 +37,10 @@ namespace Proj5.Member
 
         protected void Enter_Click(object sender, EventArgs e)
         {
-            //Multi.Service1Client client = new Multi.Service1Client(); // Makes sure both text boxes are full
+            Multi.Service1Client client = new Multi.Service1Client(); // Makes sure both text boxes are full
             string zip = zipcodeTextBox.Text;
             string weatherInfo = "<br/>Weather Info:";
-            //WeatherServiceReference.Service1Client weatherService = new WeatherServiceReference.Service1Client(); //uses weather service
+            WeatherServiceReference.Service1Client weatherService = new WeatherServiceReference.Service1Client(); //uses weather service
             try //checks for valid zipcode
             {
                 tz.Text = client.GetTimezone(zip);
