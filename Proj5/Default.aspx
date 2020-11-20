@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Proj5._Default" %>
-
+<%@ Register TagPrefix = "cse" TagName="loginName" src="CurrentUsername.ascx" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
+    <cse:loginName runat = "server" />
     <p>
     <br />
     MAIN</p>

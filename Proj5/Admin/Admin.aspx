@@ -1,5 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="Proj5.Admin.Admin" %>
+<%@ Register TagPrefix = "cse" TagName="loginName" src="CurrentUsername.ascx" %>
 
+    
+    
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -8,6 +11,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <cse:loginName runat = "server" />
         <div>
             ADMIN<br />
             Add username and passwords to staff.xml<br />
