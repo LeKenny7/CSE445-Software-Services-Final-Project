@@ -12,6 +12,7 @@ namespace Proj5.Member
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string weatherInfo = "<br/>Weather Info:";
             HttpCookie myCookies = Request.Cookies["myCookieID"]; //checks for any cookies
             if ((myCookies == null) || (myCookies["Zipcode"] == ""))
             {
