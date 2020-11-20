@@ -16,11 +16,17 @@
             <asp:Button ID="Button2" runat="server" Text="Sign Out" OnClick="Button2_Click1" />
             <br />
             <br />
-            Timezone:<br />
-            Please Enter Zipcode:<asp:TextBox ID="zipcode" runat="server"></asp:TextBox>
+            <asp:Label ID="zipcodeLabel" runat="server" Text="Label"></asp:Label>
+            <br />
+            Please Enter Zipcode:<asp:TextBox ID="zipcodeTextBox" runat="server"></asp:TextBox>
 &nbsp;<asp:Button ID="Enter" runat="server" OnClick="Enter_Click" Text="Enter!" />
-        </div>
+            <br />
+            <br />
+            Timezone:</div>
         <asp:Label ID="tz" runat="server"></asp:Label>
+        <br />
+        <asp:Label ID="weatherInfoLabel" runat="server" Text="Weather Info:"></asp:Label>
+        <br />
     </form>
 </body>
 </html>

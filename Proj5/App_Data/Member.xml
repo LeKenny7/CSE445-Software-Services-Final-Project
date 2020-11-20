@@ -7,4 +7,8 @@
     <Name>Johnny</Name>
     <Password>Cse445ta!</Password>
   </user>
+  <user>
+    <Name>joe</Name>
+    <Password>joe</Password>
+  </user>
 </allUsers>

@@ -42,7 +42,7 @@ namespace Proj5
 
         protected void Button6_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Register.aspx");
+            Response.Redirect("CaptchaForm.aspx");
         }
     }
 }
