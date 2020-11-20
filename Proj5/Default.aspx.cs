@@ -25,11 +25,6 @@ namespace Proj5
             Response.Redirect("Staff/Staff.aspx");
         }
 
-        protected void Button3_Click(object sender, EventArgs e)
-        {
-            FormsAuthentication.SignOut();
-        }
-
         protected void Button4_Click(object sender, EventArgs e)
         {
             Response.Redirect("Admin/Admin.aspx");

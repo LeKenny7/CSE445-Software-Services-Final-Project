@@ -14,7 +14,6 @@
         <div>
             STAFF<br />
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Home" />
-            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Sign Out" />
         </div>
     </form>
 </body>

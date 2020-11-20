@@ -15,7 +15,6 @@
         <div>
             MEMBER<br />
             <asp:Button ID="Button1" runat="server" Text="Home" />
-            <asp:Button ID="Button2" runat="server" Text="Sign Out" />
         </div>
     </form>
 </body>

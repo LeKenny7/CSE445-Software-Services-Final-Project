@@ -59,10 +59,6 @@ namespace Proj5.Staff
             Response.Redirect("../Default.aspx");
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-            FormsAuthentication.SignOut();
-            Response.Redirect("../Default.aspx");
-        }
+       
     }
 }
