@@ -18,22 +18,29 @@ namespace Proj5
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-           
 
-            if (Auth(username.Text, password.Text, "App_Data/Member.xml"))
+            try
             {
-                FormsAuthentication.RedirectFromLoginPage(username.Text, false);
+                if (Auth(username.Text, password.Text, "App_Data/Member.xml"))
+                {
+                    FormsAuthentication.RedirectFromLoginPage(username.Text, false);
+                }
+                else if (Auth(username.Text, password.Text, "App_Data/Staff.xml"))
+                {
+
+                    FormsAuthentication.RedirectFromLoginPage(username.Text, false);
+                }
+                else
+                {
+                    username.Text = "";
+                    password.Text = "";
+                }
             }
-            else if (Auth(username.Text, password.Text, "App_Data/Staff.xml"))
+            catch(Exception)
             {
-                
-                FormsAuthentication.RedirectFromLoginPage(username.Text, false);
+
             }
-            else
-            {
-                username.Text = "";
-                password.Text = "";
-            }
+            
 
         }
 
