@@ -116,11 +116,5 @@ namespace Proj5.Admin
             Response.Redirect("../Default.aspx");
         }
 
-        protected void Button3_Click(object sender, EventArgs e)
-        {
-            FormsAuthentication.SignOut();
-            Response.Redirect("../Default.aspx");
-
-        }
     }
 }

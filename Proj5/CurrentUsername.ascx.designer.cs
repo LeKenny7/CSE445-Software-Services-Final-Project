@@ -7,29 +7,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Proj5.Member
+namespace Proj5
 {
 
 
-    public partial class Member
+    public partial class CurrentUsername
     {
 
         /// <summary>
-        /// form1 control.
+        /// currentUserLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label currentUserLabel;
 
         /// <summary>
-        /// Button1 control.
+        /// LogoutButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button LogoutButton;
     }
 }
