@@ -2,13 +2,21 @@
 <allUsers>
   <user>
      	<Name>TA</Name>
-      	<Password>Cse445ta!</Password></user>
+      	<Password>MpZyDcI4Rhp/27eQnPFwDxBf1kCZa1b+</Password></user>
   <user>
     <Name>Karen</Name>
-    <Password>Cse445ta!</Password>
+    <Password>MpZyDcI4Rhp/27eQnPFwDxBf1kCZa1b+</Password>
   </user>
   <user>
     <Name>Johnny</Name>
-    <Password>Cse445ta!</Password>
+    <Password>MpZyDcI4Rhp/27eQnPFwDxBf1kCZa1b+</Password>
   </user>
+  <user>
+    <Name>David</Name>
+    <Password>1Z3auZuoRer4TlHLDjTDoA==</Password>
+  </user>
+	<user>
+		<Name>Javid</Name>
+		<Password>1Z3auZuoRer4TlHLDjTDoA==</Password>
+	</user>
 </allUsers>

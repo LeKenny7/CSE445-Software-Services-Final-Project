@@ -345,6 +345,12 @@
     <WCFMetadataStorage Include="Connected Services\Multi\" />
     <WCFMetadataStorage Include="Connected Services\WeatherServiceReference\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EncryptionLibrary\EncryptionLibrary.csproj">
+      <Project>{747de8c5-397b-4d9b-a3b7-02e78a32fc04}</Project>
+      <Name>EncryptionLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

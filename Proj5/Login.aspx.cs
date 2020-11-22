@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
+using EncryptionLibrary;
 
 namespace Proj5
 {
@@ -72,9 +74,13 @@ namespace Proj5
 
                         if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "Password"))
                         {
+                            Class1 decrypt = new Class1();
+                        
                             string spass = reader.ReadString();
-                            if (spass == ps)
+                            string decryptPassword = decrypt.decryptAsync(spass);
+                            if (decryptPassword == ps)//Decrypt password
                             {
+                                Debug.WriteLine("Password Found");
                                 //Response.Write("p: " + reader.Value);
                                 validPassword = true;
                             }
