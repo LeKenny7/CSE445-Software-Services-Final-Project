@@ -120,6 +120,16 @@
     <Content Include="Admin\Admin.aspx" />
     <Content Include="App_Data\Member.xml" />
     <Content Include="App_Data\Staff.xml" />
+    <None Include="Connected Services\CityPopService\Service1.wsdl" />
+    <None Include="Connected Services\CityPopService\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CityPopService\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CityPopService\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\Multi\Service1.disco" />
     <None Include="Connected Services\Multi\configuration91.svcinfo" />
     <None Include="Connected Services\Multi\configuration.svcinfo" />
@@ -133,6 +143,13 @@
     <None Include="Connected Services\WeatherServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\WeatherServiceReference\configuration.svcinfo" />
     <None Include="Connected Services\WeatherServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\CityPopService\Service1.disco" />
+    <None Include="Connected Services\CityPopService\configuration91.svcinfo" />
+    <None Include="Connected Services\CityPopService\configuration.svcinfo" />
+    <None Include="Connected Services\CityPopService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -243,6 +260,11 @@
     <Compile Include="CaptchaForm.aspx.designer.cs">
       <DependentUpon>CaptchaForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\CityPopService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\Multi\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -349,6 +371,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\CityPopService\" />
     <WCFMetadataStorage Include="Connected Services\Multi\" />
     <WCFMetadataStorage Include="Connected Services\WeatherServiceReference\" />
   </ItemGroup>

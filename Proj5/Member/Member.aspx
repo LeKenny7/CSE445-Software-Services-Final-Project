@@ -28,6 +28,16 @@
         <br />
         <asp:Label ID="weatherInfoLabel" runat="server" Text="Weather Info:"></asp:Label>
         <br />
+    <br />
+        Please Enter City:<asp:TextBox ID="CityBox" runat="server"></asp:TextBox>
+          &nbsp;<asp:Button ID="CityButton" runat="server" Text="Get Pop" OnClick="CityButton_Click" />
+         <br />
+        <br />
+         City Population:&nbsp;<asp:Label ID="PopOutput" Text="" runat="server"></asp:Label>
+                     
+                     
+                </tr>
+                </table>
     </form>
 </body>
 </html>

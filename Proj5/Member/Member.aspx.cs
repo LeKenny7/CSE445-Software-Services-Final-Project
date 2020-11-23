@@ -52,5 +52,12 @@ namespace Proj5.Member
             Response.Cookies.Add(myCookies); //Add to cookie
             zipcodeLabel.Text = "Zipcode stored in cookie: " + myCookies["Zipcode"]; //Let user know zipcode is stored in cookie
         }
+
+        protected void CityButton_Click(object sender, EventArgs e)
+        {
+            CityPopService.Service1Client cityPopClient = new CityPopService.Service1Client();
+            decimal outputPop = cityPopClient.LocationPop(CityBox.Text);
+            PopOutput.Text = outputPop.ToString();
+        }
     }
 }
