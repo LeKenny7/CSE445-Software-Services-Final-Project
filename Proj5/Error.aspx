@@ -14,7 +14,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <h1 class="auto-style1">Custom Error Page From Global.asax EventHandler! Unable to make Duplicate Accounts! </h1>
+            <h1 class="auto-style1">Custom Error Page From Global.asax Event Handler! Unable to Register Duplicate Accounts! Please Try Again.</h1>
         </div>
         <p style="text-align: center">
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Home" />

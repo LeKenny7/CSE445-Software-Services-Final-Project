@@ -20,25 +20,33 @@ namespace Proj5
 
         protected void Button1_Click(object sender, EventArgs e) //Register account button
         {
-            Boolean isFound = Auth(username.Text, password.Text);
-            if (isFound == false)
+            if (username.Text.Length == 0 || password.Text.Length == 0)
             {
-                XDocument doc = XDocument.Load((Server.MapPath("App_Data/Member.xml"))); //Add account credentials to member.xml
-                XElement root = new XElement("user");
-                root.Add(new XElement("Name", username.Text));
+                Boolean isFound = Auth(username.Text, password.Text);
+                if (isFound == false)
+                {
+                    XDocument doc = XDocument.Load((Server.MapPath("App_Data/Member.xml"))); //Add account credentials to member.xml
+                    XElement root = new XElement("user");
+                    root.Add(new XElement("Name", username.Text));
 
-                //Encrypt Password in XML
-                Class1 encrypt = new Class1();
-                string temp = encrypt.encryptAsync(password.Text);
-                root.Add(new XElement("Password", temp));
+                    //Encrypt Password in XML
+                    Class1 encrypt = new Class1();
+                    string temp = encrypt.encryptAsync(password.Text);
+                    root.Add(new XElement("Password", temp));
 
-                doc.Element("allUsers").Add(root);
-                doc.Save((Server.MapPath("App_Data/Member.xml")));
-                FormsAuthentication.RedirectFromLoginPage(username.Text, false); //Check if it account is authentic from member.xml
+                    doc.Element("allUsers").Add(root);
+                    doc.Save((Server.MapPath("App_Data/Member.xml")));
+                    FormsAuthentication.RedirectFromLoginPage(username.Text, false); //Check if it account is authentic from member.xml
+                }
+                else
+                {
+                    throw new Exception("Duplicate Account");   //Custom error
+                }
             }
-            else
+            else //a text box is blank
             {
-                throw new Exception("Duplicate Account");   //Custom error
+                username.Text = "";
+                password.Text = "";
             }
         }
 
