@@ -13,7 +13,7 @@ namespace Proj5
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (HttpContext.Current.User.Identity.Name != null && HttpContext.Current.User.Identity.Name != "")
+            if (HttpContext.Current.User.Identity.Name != null && HttpContext.Current.User.Identity.Name != "") //Displays current username at top of page
             {
                 currentUserLabel.Text = "Welcome, " + HttpContext.Current.User.Identity.Name;
                 LogoutButton.Visible = true;
@@ -26,7 +26,7 @@ namespace Proj5
 
         }
 
-        protected void LogoutButton_Click(object sender, EventArgs e)
+        protected void LogoutButton_Click(object sender, EventArgs e) //Sign out of account and go back to home page
         {
             FormsAuthentication.SignOut();
             currentUserLabel.Text = "Not Logged In";

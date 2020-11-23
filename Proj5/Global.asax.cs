@@ -23,7 +23,7 @@ namespace Proj5
             Response.Write("< hr /> This page was last accessed at " + DateTime.Now.ToString());
         }
 
-        void Application_Error(object sender, EventArgs e)
+        void Application_Error(object sender, EventArgs e) //Custom error page if duplicate account
         {
             if (HttpContext.Current == null) return;
             HttpContext context = HttpContext.Current;

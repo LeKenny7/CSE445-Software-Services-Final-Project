@@ -14,7 +14,7 @@ namespace Proj5
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e) //Go back to home page after seeing error message
         {
             Response.Redirect("Default.aspx");
         }

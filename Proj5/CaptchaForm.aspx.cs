@@ -9,7 +9,7 @@ namespace Proj5
 {
     public partial class CaptchaForm : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e) //Page just holds a user control
         {
 
         }
