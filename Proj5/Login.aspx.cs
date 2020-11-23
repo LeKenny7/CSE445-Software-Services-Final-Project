@@ -20,31 +20,37 @@ namespace Proj5
 
         protected void Button1_Click(object sender, EventArgs e) //submit login information
         {
-
-            try
+            if(username.Text.Length == 0 || password.Text.Length == 0)
             {
-                if (Auth(username.Text, password.Text, "App_Data/Member.xml")) //Check if login is a member
+                try
                 {
-                    FormsAuthentication.RedirectFromLoginPage(username.Text, false);
+                    if (Auth(username.Text, password.Text, "App_Data/Member.xml")) //Check if login is a member
+                    {
+                        FormsAuthentication.RedirectFromLoginPage(username.Text, false);
+                    }
+                    else if (Auth(username.Text, password.Text, "App_Data/Staff.xml")) //Check if login is a staff
+                    {
+
+                        FormsAuthentication.RedirectFromLoginPage(username.Text, false);
+                    }
+                    else //If not member or staff, do nothing and refresh text boxes
+                    {
+                        username.Text = "";
+                        password.Text = "";
+                        error.Text = "Incorrect Username/Password. Please try again or Register as a new Member!";
+                    }
                 }
-                else if (Auth(username.Text, password.Text, "App_Data/Staff.xml")) //Check if login is a staff
+                catch (Exception)
                 {
 
-                    FormsAuthentication.RedirectFromLoginPage(username.Text, false);
-                }
-                else //If not member or staff, do nothing and refresh text boxes
-                {
-                    username.Text = "";
-                    password.Text = "";
-                    error.Text = "Incorrect USername/Password. Please try again or Register as a new Member!";
                 }
             }
-            catch(Exception)
+            else //a text box is blank
             {
-
+                username.Text = "";
+                password.Text = "";
+                error.Text = "Please fill out both Username and Password.";
             }
-            
-
         }
 
         public Boolean Auth(String un, String ps, String fn) //Check if login info is correct
