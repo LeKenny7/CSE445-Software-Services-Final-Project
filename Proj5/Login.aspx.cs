@@ -18,21 +18,21 @@ namespace Proj5
            
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e) //submit login information
         {
 
             try
             {
-                if (Auth(username.Text, password.Text, "App_Data/Member.xml"))
+                if (Auth(username.Text, password.Text, "App_Data/Member.xml")) //Check if login is a member
                 {
                     FormsAuthentication.RedirectFromLoginPage(username.Text, false);
                 }
-                else if (Auth(username.Text, password.Text, "App_Data/Staff.xml"))
+                else if (Auth(username.Text, password.Text, "App_Data/Staff.xml")) //Check if login is a staff
                 {
 
                     FormsAuthentication.RedirectFromLoginPage(username.Text, false);
                 }
-                else
+                else //If not member or staff, do nothing and refresh text boxes
                 {
                     username.Text = "";
                     password.Text = "";
@@ -47,7 +47,7 @@ namespace Proj5
 
         }
 
-        public Boolean Auth(String un, String ps, String fn)
+        public Boolean Auth(String un, String ps, String fn) //Check if login info is correct
         {
 
             try
@@ -60,20 +60,17 @@ namespace Proj5
                     while (reader.Read())
                     {
 
-                        if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "Name"))
+                        if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "Name")) //Checks username
                         {
-                            //Response.Write(reader.Value);
                             string sname = reader.ReadString();
                             if (sname == un)
                             {
                                 validUser = true;
-                                //Response.Write("u: " + reader.Value);
                                 reader.Read();
-                                //Response.Write("read: " + reader.Value);
                             }
                         }
 
-                        if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "Password"))
+                        if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "Password")) //Checks password
                         {
                             Class1 decrypt = new Class1();
                         
@@ -82,13 +79,11 @@ namespace Proj5
                             if (decryptPassword == ps)//Decrypt password
                             {
                                 Debug.WriteLine("Password Found");
-                                //Response.Write("p: " + reader.Value);
                                 validPassword = true;
                             }
                         }
                         if (validPassword == true && validUser == true)
                         {
-                            //Response.Redirect("timezone.aspx");
                             return true;
                         }
                         else
@@ -102,7 +97,7 @@ namespace Proj5
             return false;
         }
 
-        protected void LinkButton1_Click(object sender, EventArgs e)
+        protected void LinkButton1_Click(object sender, EventArgs e) //Wants to register so go to captcha form
         {
             Response.Redirect("CaptchaForm.aspx");
         }

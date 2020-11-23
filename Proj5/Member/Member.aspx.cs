@@ -23,7 +23,7 @@ namespace Proj5.Member
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e) //Home page button
         {
             Response.Redirect("../Default.aspx");
         }
@@ -53,7 +53,7 @@ namespace Proj5.Member
             zipcodeLabel.Text = "Zipcode stored in cookie: " + myCookies["Zipcode"]; //Let user know zipcode is stored in cookie
         }
 
-        protected void CityButton_Click(object sender, EventArgs e)
+        protected void CityButton_Click(object sender, EventArgs e) //Gets city population based off of city name
         {
             CityPopService.Service1Client cityPopClient = new CityPopService.Service1Client();
             decimal outputPop = cityPopClient.LocationPop(CityBox.Text);

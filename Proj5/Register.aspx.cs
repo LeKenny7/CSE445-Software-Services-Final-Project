@@ -18,12 +18,12 @@ namespace Proj5
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e) //Register account button
         {
             Boolean isFound = Auth(username.Text, password.Text);
             if (isFound == false)
             {
-                XDocument doc = XDocument.Load((Server.MapPath("App_Data/Member.xml")));
+                XDocument doc = XDocument.Load((Server.MapPath("App_Data/Member.xml"))); //Add account credentials to member.xml
                 XElement root = new XElement("user");
                 root.Add(new XElement("Name", username.Text));
 
@@ -34,52 +34,46 @@ namespace Proj5
 
                 doc.Element("allUsers").Add(root);
                 doc.Save((Server.MapPath("App_Data/Member.xml")));
-                FormsAuthentication.RedirectFromLoginPage(username.Text, false);
-                //Response.Redirect("Timezone.aspx");
+                FormsAuthentication.RedirectFromLoginPage(username.Text, false); //Check if it account is authentic from member.xml
             }
             else
             {
-                throw new Exception("Duplicate Account");
+                throw new Exception("Duplicate Account");   //Custom error
             }
         }
 
-        public Boolean Auth(String un, String ps)
+        public Boolean Auth(String un, String ps) //Check if user is authentic
         {
             try
             {
-                using (XmlTextReader reader = new XmlTextReader(Server.MapPath("App_Data/Member.xml")))
+                using (XmlTextReader reader = new XmlTextReader(Server.MapPath("App_Data/Member.xml"))) //look through member.xml
                 {
                     Boolean validUser = false;
                     Boolean validPassword = false;
 
                     while (reader.Read())
                     {
-                        if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "Name"))
+                        if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "Name")) //Check for username
                         {
-                            //Response.Write(reader.Value);
                             string sname = reader.ReadString();
                             if (sname == un)
                             {
                                 validUser = true;
-                                //Response.Write("u: " + reader.Value);
                                 reader.Read();
-                                //Response.Write("read: " + reader.Value);
                             }
                         }
 
-                        if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "Password"))
+                        if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "Password")) //Check for password
                         {
                             Class1 decrypt = new Class1();
                             string spass = reader.ReadString();
                             if (decrypt.decryptAsync(spass) == ps)//Decrypt Password
                             {
-                                //Response.Write("p: " + reader.Value);
                                 validPassword = true;
                             }
                         }
-                        if (validPassword == true && validUser == true)
+                        if (validPassword == true && validUser == true) //Return true if credentials are in the xml file
                         {
-                            //Response.Redirect("timezone.aspx");
                             return true;
                         }
                     }
@@ -89,7 +83,7 @@ namespace Proj5
             return false;
         }
 
-        protected void LinkButton1_Click(object sender, EventArgs e)
+        protected void LinkButton1_Click(object sender, EventArgs e) //link to login page
         {
             Response.Redirect("Login.aspx");
         }

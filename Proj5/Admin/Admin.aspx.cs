@@ -18,12 +18,12 @@ namespace Proj5.Admin
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e) //login button
         {
-            Boolean isFound = Auth(username.Text, password.Text);
+            Boolean isFound = Auth(username.Text, password.Text); //Checks if admin login is exists and is correct
             if (isFound == false)
             {
-                XDocument doc = XDocument.Load((Server.MapPath("../App_Data/Staff.xml")));
+                XDocument doc = XDocument.Load((Server.MapPath("../App_Data/Staff.xml"))); //Add name to staff
                 XElement root = new XElement("user");
                 root.Add(new XElement("Name", username.Text));
 
@@ -34,18 +34,17 @@ namespace Proj5.Admin
 
                 doc.Element("allUsers").Add(root);
                 doc.Save((Server.MapPath("../App_Data/Staff.xml")));
-                //Response.Redirect("Timezone.aspx");
                 username.Text = "";
                 password.Text = "";
 
             }
             else
             {
-                throw new Exception("Duplicate Account");
+                throw new Exception("Duplicate Account"); //Custome duplicate account error
             }
         }
 
-        public Boolean Auth(String un, String ps)
+        public Boolean Auth(String un, String ps) //Checks if authentic account through staff.xml
         {
             try
             {
@@ -56,32 +55,27 @@ namespace Proj5.Admin
 
                     while (reader.Read())
                     {
-                        if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "Name"))
+                        if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "Name"))//Checks if names are the same
                         {
-                            //Response.Write(reader.Value);
                             string sname = reader.ReadString();
                             if (sname == un)
                             {
                                 validUser = true;
-                                //Response.Write("u: " + reader.Value);
                                 reader.Read();
-                                //Response.Write("read: " + reader.Value);
                             }
                         }
 
-                        if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "Password"))
+                        if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "Password")) //checks if passwords are the same
                         {
                             Class1 decrypt = new Class1();
                             string spass = reader.ReadString();
                             if (decrypt.decryptAsync(spass) == ps)//Decrypt Password
                             {
-                                //Response.Write("p: " + reader.Value);
                                 validPassword = true;
                             }
                         }
                         if (validPassword == true && validUser == true)
                         {
-                            //Response.Redirect("../Timezone.aspx");
                             return true;
                         }
                         else
@@ -95,7 +89,7 @@ namespace Proj5.Admin
             return false;
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void Button2_Click(object sender, EventArgs e) //Go back to home
         {
             Response.Redirect("../Default.aspx");
         }

@@ -22,8 +22,7 @@ namespace Proj5
             if (correctCaptcha)
             {
                 captchaLabel.Text = "Correct input!";
-                Response.Redirect("Register.aspx"); //Go to zipcode page
-                // TODO: proceed with protected action
+                Response.Redirect("Register.aspx"); //Go to register page
             }
             else
             {
