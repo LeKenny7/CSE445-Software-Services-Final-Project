@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proj5", "Proj5\Proj5.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timezone", "Timezone\Timezone.csproj", "{11DC3555-E462-4C2B-9AC8-DA4D13911F53}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EncryptionLibrary", "EncryptionLibrary\EncryptionLibrary.csproj", "{747DE8C5-397B-4D9B-A3B7-02E78A32FC04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{11DC3555-E462-4C2B-9AC8-DA4D13911F53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11DC3555-E462-4C2B-9AC8-DA4D13911F53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11DC3555-E462-4C2B-9AC8-DA4D13911F53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{747DE8C5-397B-4D9B-A3B7-02E78A32FC04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{747DE8C5-397B-4D9B-A3B7-02E78A32FC04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{747DE8C5-397B-4D9B-A3B7-02E78A32FC04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{747DE8C5-397B-4D9B-A3B7-02E78A32FC04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

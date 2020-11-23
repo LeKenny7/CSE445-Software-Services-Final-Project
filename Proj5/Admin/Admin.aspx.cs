@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
 using System.Xml.Linq;
+using EncryptionLibrary;
 
 namespace Proj5.Admin
 {
@@ -25,7 +26,11 @@ namespace Proj5.Admin
                 XDocument doc = XDocument.Load((Server.MapPath("../App_Data/Staff.xml")));
                 XElement root = new XElement("user");
                 root.Add(new XElement("Name", username.Text));
-                root.Add(new XElement("Password", password.Text));
+
+                //Encrypt Password in XML
+                Class1 encrypt = new Class1();
+                string temp = encrypt.encryptAsync(password.Text);
+                root.Add(new XElement("Password", temp));
 
                 doc.Element("allUsers").Add(root);
                 doc.Save((Server.MapPath("../App_Data/Staff.xml")));
@@ -66,8 +71,9 @@ namespace Proj5.Admin
 
                         if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "Password"))
                         {
+                            Class1 decrypt = new Class1();
                             string spass = reader.ReadString();
-                            if (spass == ps)
+                            if (decrypt.decryptAsync(spass) == ps)//Decrypt Password
                             {
                                 //Response.Write("p: " + reader.Value);
                                 validPassword = true;
@@ -92,13 +98,6 @@ namespace Proj5.Admin
         protected void Button2_Click(object sender, EventArgs e)
         {
             Response.Redirect("../Default.aspx");
-        }
-
-        protected void Button3_Click(object sender, EventArgs e)
-        {
-            FormsAuthentication.SignOut();
-            Response.Redirect("../Default.aspx");
-
         }
     }
 }

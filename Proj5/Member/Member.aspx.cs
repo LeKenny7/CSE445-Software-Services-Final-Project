@@ -28,12 +28,6 @@ namespace Proj5.Member
             Response.Redirect("../Default.aspx");
         }
 
-        protected void Button2_Click1(object sender, EventArgs e)
-        {
-            FormsAuthentication.SignOut();
-            Response.Redirect("../Default.aspx");
-        }
-
         protected void Enter_Click(object sender, EventArgs e)
         {
             Multi.Service1Client client = new Multi.Service1Client(); // Makes sure both text boxes are full
@@ -57,6 +51,13 @@ namespace Proj5.Member
             myCookies.Expires = DateTime.Now.AddMonths(6); //remove cookie after 6 months
             Response.Cookies.Add(myCookies); //Add to cookie
             zipcodeLabel.Text = "Zipcode stored in cookie: " + myCookies["Zipcode"]; //Let user know zipcode is stored in cookie
+        }
+
+        protected void CityButton_Click(object sender, EventArgs e)
+        {
+            CityPopService.Service1Client cityPopClient = new CityPopService.Service1Client();
+            decimal outputPop = cityPopClient.LocationPop(CityBox.Text);
+            PopOutput.Text = outputPop.ToString();
         }
     }
 }

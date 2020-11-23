@@ -7,6 +7,7 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
+using EncryptionLibrary;
 
 namespace Proj5.Staff
 {
@@ -59,12 +60,6 @@ namespace Proj5.Staff
             Response.Redirect("../Default.aspx");
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-            FormsAuthentication.SignOut();
-            Response.Redirect("../Default.aspx");
-        }
-
         protected void Button3_Click(object sender, EventArgs e)
         {
             String full = "";
@@ -76,7 +71,7 @@ namespace Proj5.Staff
             foreach (XmlNode child in all)
             {
                 String un = child.SelectSingleNode("Name").InnerText;
-                String pw = child.SelectSingleNode("Password").InnerText;
+                String pw = child.SelectSingleNode("Password").InnerText;//Leave password Encrypted
                 full += "Member " + count + ": Username [" + un + "] Password: [" + pw + "]<br/>";
                 count++;
             }
