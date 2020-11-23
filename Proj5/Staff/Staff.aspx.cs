@@ -77,5 +77,10 @@ namespace Proj5.Staff
             }
             xml.Text = full;
         }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
+        }
     }
 }

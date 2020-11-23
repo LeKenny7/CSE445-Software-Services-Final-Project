@@ -36,6 +36,7 @@ namespace Proj5
                 {
                     username.Text = "";
                     password.Text = "";
+                    error.Text = "Incorrect USername/Password. Please try again or Register as a new Member!";
                 }
             }
             catch(Exception)

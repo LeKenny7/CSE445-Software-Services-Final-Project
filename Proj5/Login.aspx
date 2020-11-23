@@ -10,7 +10,8 @@
     <form id="form1" runat="server">
         <div>
             <h1>Login:</h1>
-            Login as either a Member, Admin, or Staff!!<br />
+            Login as either a Member, Admin, or Staff.<br />
+            <asp:Label ID="error" runat="server" style="color: #FF0000"></asp:Label>
             <br />
             Username:<br />
             <asp:TextBox ID="username" runat="server"></asp:TextBox>

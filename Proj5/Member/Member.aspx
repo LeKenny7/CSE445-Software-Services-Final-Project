@@ -12,12 +12,19 @@
         <cse:loginName runat = "server" />
         <div>
             <h1>Member Page</h1>
-            <br />
-            In this page, you must introduce (explain) clearly what functions this page offers. You must allow users to register (self-subscribe) to obtain access to this page. For example, the account information page or the shopping cart page can be Member pages. An image verifier must be used when a new user signs up. You must create your own access control component and store the credentials in an XML file called Member.xml. Only the authenticated members can access this page. The password must be encrypted or hashed when adding into the XML files. You must use a local encryption/decryption or hash function that your team developed as a DLL library function. Calling the encryption/decryption/hashing Web service is not acceptable, as the password may be sent to the server in clear text. <br />
             <asp:Button ID="Button1" runat="server" Text="Home" OnClick="Button1_Click" />
             <br />
             <br />
-            <asp:Label ID="zipcodeLabel" runat="server" Text="Label"></asp:Label>
+            Thank you for signing up for our services as a Member we are happy to have you! Our services include a timezone and weather service that takes in a zipcode to provide you with the current timezone and weather details, as well as a population service that takes in a city name to return the current population of that city.
+            <br />
+            <br />
+            <strong>Testing for zipcode services:</strong><br />
+            - sample input: &quot;85233&quot;, &quot;85281&quot;, and/or &quot;85353&quot;<br />
+            <br />
+            <strong>Testing for population service:</strong><br />
+            - sample input: &quot;Redding&quot;<br />
+            <br />
+            <asp:Label ID="zipcodeLabel" runat="server"></asp:Label>
             <br />
             Please Enter Zipcode:<asp:TextBox ID="zipcodeTextBox" runat="server"></asp:TextBox>
 &nbsp;<asp:Button ID="Enter" runat="server" OnClick="Enter_Click" Text="Enter!" />
