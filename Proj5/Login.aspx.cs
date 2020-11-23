@@ -37,7 +37,7 @@ namespace Proj5
                     {
                         username.Text = "";
                         password.Text = "";
-                        error.Text = "Incorrect USername/Password. Please try again or Register as a new Member!";
+                        error.Text = "Incorrect Username/Password. Please try again or Register as a new Member!";
                     }
                 }
                 catch (Exception)
@@ -49,7 +49,7 @@ namespace Proj5
             {
                 username.Text = "";
                 password.Text = "";
-                error.Text = "Incorrect USername/Password. Please try again or Register as a new Member!";
+                error.Text = "Please fill out both Username and Password.";
             }
         }
 
